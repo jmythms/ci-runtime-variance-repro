@@ -107,8 +107,18 @@ def _build_market_tree(preset: WorkloadPreset, seed: int) -> dict[str, Any]:
 
 
 def _clone_markets(markets: dict[str, Any]) -> dict[str, Any]:
-    """Baseline clone implementation intentionally uses general deepcopy."""
-    return copy.deepcopy(markets)
+    """Specialized recursive clone for nested market dictionaries."""
+    return _copy_market_node(markets)
+
+
+def _copy_market_node(value: Any) -> Any:
+    if isinstance(value, dict):
+        return {key: _copy_market_node(item) for key, item in value.items()}
+    if isinstance(value, np.ndarray):
+        return value.copy()
+    if isinstance(value, list):
+        return list(value)
+    return copy.copy(value)
 
 
 def _iter_metric_arrays(markets: dict[str, Any]):
