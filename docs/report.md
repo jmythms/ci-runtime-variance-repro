@@ -8,7 +8,7 @@ downloaded from the personal public repo workflow runs.
 - Repo: `jmythms/ci-runtime-variance-repro`
 - Workflow: `runtime-repro`
 - Samples per commit: 10
-- Benchmark: synthetic Scout-shaped workload
+- Benchmark: synthetic Scout-shaped workload, roughly 7-10 minutes per CI sample
 - Scout interaction: none
 
 ## Commits

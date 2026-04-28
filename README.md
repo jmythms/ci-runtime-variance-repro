@@ -39,6 +39,10 @@ The GitHub Actions workflow runs up to 10 repeated matrix samples for each
 commit. Ten samples are the default because comparing distributions is more
 useful than comparing one timing number.
 
+The default `ci` preset is intentionally long-running. It targets roughly 7-10
+minutes per sample on GitHub-hosted Ubuntu runners, so the workflow can expose
+meaningful hosted-runner variance without relying on artificial sleep time.
+
 The intended demonstration sequence is:
 
 1. Commit A: baseline synthetic benchmark.

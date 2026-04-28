@@ -53,7 +53,7 @@ PRESETS: dict[str, WorkloadPreset] = {
         years=32,
         width=96,
         copy_rounds=4,
-        competition_rounds=12,
+        competition_rounds=200,
         io_rounds=2,
     ),
 }
